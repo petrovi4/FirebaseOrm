@@ -29,9 +29,9 @@
 		73A8A5992302BFA200C82335 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5882302BFA100C82335 /* FirebaseAnalytics.framework */; };
 		73A8A59A2302BFA200C82335 /* gRPC-C++.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5892302BFA100C82335 /* gRPC-C++.framework */; };
 		73A8A59B2302BFA200C82335 /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A58A2302BFA100C82335 /* leveldb-library.framework */; };
-		73A8A59C2302BFA200C82335 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A58B2302BFA100C82335 /* Firebase.framework */; };
 		73A8A59E2302C00A00C82335 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A59D2302C00A00C82335 /* libsqlite3.tbd */; };
 		73A8A5A02302C01700C82335 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A59F2302C01700C82335 /* StoreKit.framework */; };
+		73A8A5A22302C67F00C82335 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5A12302C67E00C82335 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +73,7 @@
 		73A8A58B2302BFA100C82335 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = SOURCE_ROOT; };
 		73A8A59D2302C00A00C82335 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		73A8A59F2302C01700C82335 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		73A8A5A12302C67E00C82335 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8A5A22302C67F00C82335 /* libc++.tbd in Frameworks */,
 				73A8A5A02302C01700C82335 /* StoreKit.framework in Frameworks */,
 				73A8A59E2302C00A00C82335 /* libsqlite3.tbd in Frameworks */,
 				73A8A58C2302BFA100C82335 /* FirebaseCoreDiagnostics.framework in Frameworks */,
@@ -98,7 +100,6 @@
 				73A8A5992302BFA200C82335 /* FirebaseAnalytics.framework in Frameworks */,
 				73A8A59A2302BFA200C82335 /* gRPC-C++.framework in Frameworks */,
 				73A8A59B2302BFA200C82335 /* leveldb-library.framework in Frameworks */,
-				73A8A59C2302BFA200C82335 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +157,7 @@
 		73A8A54F2300CFDB00C82335 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73A8A5A12302C67E00C82335 /* libc++.tbd */,
 				73A8A59F2302C01700C82335 /* StoreKit.framework */,
 				73A8A59D2302C00A00C82335 /* libsqlite3.tbd */,
 				73A8A5832302BFA100C82335 /* BoringSSL-GRPC.framework */,
