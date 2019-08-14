@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseFirestore
 
 
@@ -18,6 +19,8 @@ open class FirebaseOrmConfig: NSObject {
 
 
 	override init() {
+		FirebaseApp.configure()
+
 		let settings = FirestoreSettings()
 		settings.isPersistenceEnabled = true
 		db = Firestore.firestore()
