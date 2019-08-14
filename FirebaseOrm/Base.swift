@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 
 /// Every object working with Firebase needs to inherit the base class FBObject and support protocol FBObjectProto
-public class FBObject<T>: Hashable where T: FBObjectProto   {
+open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Return the protocol type - it is necessary to call static methods of the protocol

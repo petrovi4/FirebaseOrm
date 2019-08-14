@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 
 
-public class FirebaseOrmConfig: NSObject {
+open class FirebaseOrmConfig: NSObject {
 
 	static let shared = FirebaseOrmConfig()
 
