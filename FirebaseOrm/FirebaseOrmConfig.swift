@@ -13,14 +13,16 @@ import FirebaseFirestore
 
 open class FirebaseOrmConfig: NSObject {
 
-	static let shared = FirebaseOrmConfig()
+	public static let shared = FirebaseOrmConfig()
 
 	public var db: Firestore
+	
+	public func configure() {
+		FirebaseApp.configure()
+	}
 
 
 	override init() {
-		FirebaseApp.configure()
-
 		let settings = FirestoreSettings()
 		settings.isPersistenceEnabled = true
 		db = Firestore.firestore()
