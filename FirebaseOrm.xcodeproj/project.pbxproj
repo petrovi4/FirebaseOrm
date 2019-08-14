@@ -13,13 +13,10 @@
 		73A8A5482300C93100C82335 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8A5472300C93100C82335 /* Base.swift */; };
 		73A8A54C2300CCAA00C82335 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8A54B2300CCAA00C82335 /* Error.swift */; };
 		73A8A54E2300CD6F00C82335 /* FirebaseOrmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8A54D2300CD6F00C82335 /* FirebaseOrmConfig.swift */; };
-		73A8A58C2302BFA100C82335 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A57B2302BFA000C82335 /* FirebaseCoreDiagnostics.framework */; };
 		73A8A58D2302BFA100C82335 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A57C2302BFA000C82335 /* FIRAnalyticsConnector.framework */; };
 		73A8A58E2302BFA100C82335 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A57D2302BFA000C82335 /* GoogleUtilities.framework */; };
-		73A8A58F2302BFA100C82335 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A57E2302BFA000C82335 /* GoogleDataTransportCCTSupport.framework */; };
 		73A8A5902302BFA100C82335 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A57F2302BFA000C82335 /* Protobuf.framework */; };
 		73A8A5912302BFA100C82335 /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5802302BFA100C82335 /* gRPC-Core.framework */; };
-		73A8A5922302BFA100C82335 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5812302BFA100C82335 /* GoogleDataTransport.framework */; };
 		73A8A5932302BFA100C82335 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5822302BFA100C82335 /* FirebaseInstanceID.framework */; };
 		73A8A5942302BFA100C82335 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5832302BFA100C82335 /* BoringSSL-GRPC.framework */; };
 		73A8A5952302BFA100C82335 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8A5842302BFA100C82335 /* GoogleAppMeasurement.framework */; };
@@ -84,13 +81,10 @@
 				73A8A5A22302C67F00C82335 /* libc++.tbd in Frameworks */,
 				73A8A5A02302C01700C82335 /* StoreKit.framework in Frameworks */,
 				73A8A59E2302C00A00C82335 /* libsqlite3.tbd in Frameworks */,
-				73A8A58C2302BFA100C82335 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				73A8A58D2302BFA100C82335 /* FIRAnalyticsConnector.framework in Frameworks */,
 				73A8A58E2302BFA100C82335 /* GoogleUtilities.framework in Frameworks */,
-				73A8A58F2302BFA100C82335 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				73A8A5902302BFA100C82335 /* Protobuf.framework in Frameworks */,
 				73A8A5912302BFA100C82335 /* gRPC-Core.framework in Frameworks */,
-				73A8A5922302BFA100C82335 /* GoogleDataTransport.framework in Frameworks */,
 				73A8A5932302BFA100C82335 /* FirebaseInstanceID.framework in Frameworks */,
 				73A8A5942302BFA100C82335 /* BoringSSL-GRPC.framework in Frameworks */,
 				73A8A5952302BFA100C82335 /* GoogleAppMeasurement.framework in Frameworks */,
