@@ -28,14 +28,14 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	/// Returns the type that you want to initialize the current QueryDocumentSnapshot
 	/// - Returns: Specific type with object constructor
-	class public func getType(forSnap: QueryDocumentSnapshot) -> FBObjectProto.Type {
+	public class func getType(forSnap: QueryDocumentSnapshot) -> FBObjectProto.Type {
 		return T.self
 	}
 
 
 	
 	/// Typed collection of previously cached objects
-	static public var cache: [T] {
+	public static var cache: [T] {
 		get {
 			let selfProtoType = self as! FBObjectProto.Type
 			return selfProtoType.cacheNonTyped as! [T]
@@ -262,7 +262,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	/// The code block is called when the document is deleted
 	/// Can be overloaded in the successor class
-	public func deleteComplete(callback: @escaping () -> Void) {
+	open func deleteComplete(callback: @escaping () -> Void) {
 		
 	}
 
