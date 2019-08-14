@@ -148,11 +148,11 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	}
 
 	
-	var documentID: String
-	var isNew: Bool
+	public var documentID: String
+	public var isNew: Bool
 	
 	
-	init() {
+	public init() {
 		self.documentID = NSUUID().uuidString
 		self.isNew = true
 		
@@ -164,7 +164,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	}
 	
 	
-	init(_ doc: DocumentSnapshot) {
+	public init(_ doc: DocumentSnapshot) {
 		self.documentID = doc.documentID
 		self.isNew = false
 	}
@@ -172,26 +172,26 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Overload the method w/o batch and callback
-	func save() {
+	public func save() {
 		self.save(nil, callback: nil)
 	}
 	
 	
 	/// Overload the method w/o batch
-	func save(callback: @escaping ((Error?, T?) -> Void)) {
+	public func save(callback: @escaping ((Error?, T?) -> Void)) {
 		self.save(nil, callback: callback)
 	}
 	
 	
 	/// Overload the method with batch, but w/o callback
-	func save(_ batch: WriteBatch) {
+	public func save(_ batch: WriteBatch) {
 		self.save(batch, callback: nil)
 	}
 	
 	
 	/// Saves the object, adds it to the cache if necessary
 	/// - Parameter batch: If batch is passed, it only adds to the batch for subsequent commit
-	func save(_ batch: WriteBatch?, callback: ((Error?, T?) -> Void)?) {
+	public func save(_ batch: WriteBatch?, callback: ((Error?, T?) -> Void)?) {
 		let callbackWrapper: ((Error?, T?) -> Void) = {error, item in if let callback = callback { callback(error, item) } }
 
 		guard let selfProto = self as? T else {
@@ -222,14 +222,14 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Overload the method w/o batch and callback
-	func delete() {
+	public func delete() {
 		self.delete(nil, callback: nil)
 	}
 	
 
 	/// Deletes the object, cleans it from the cache if necessary
 	/// - Parameter batch: If batch is passed, it only adds to the batch for subsequent commit
-	func delete(_ batch: WriteBatch?, callback: ((Error?) -> Void)?) {
+	public func delete(_ batch: WriteBatch?, callback: ((Error?) -> Void)?) {
 		let callbackWrapper: ((Error?) -> Void) = {error in if let callback = callback { callback(error) } }
 
 		guard let selfProto = self as? T else {
@@ -262,7 +262,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	/// The code block is called when the document is deleted
 	/// Can be overloaded in the successor class
-	func deleteComplete(callback: @escaping () -> Void) {
+	public func deleteComplete(callback: @escaping () -> Void) {
 		
 	}
 
