@@ -172,26 +172,26 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Overload the method w/o batch and callback
-	public func save() {
+	open func save() {
 		self.save(nil, callback: nil)
 	}
 	
 	
 	/// Overload the method w/o batch
-	public func save(callback: @escaping ((Error?, T?) -> Void)) {
+	open func save(callback: @escaping ((Error?, T?) -> Void)) {
 		self.save(nil, callback: callback)
 	}
 	
 	
 	/// Overload the method with batch, but w/o callback
-	public func save(_ batch: WriteBatch) {
+	open func save(_ batch: WriteBatch) {
 		self.save(batch, callback: nil)
 	}
 	
 	
 	/// Saves the object, adds it to the cache if necessary
 	/// - Parameter batch: If batch is passed, it only adds to the batch for subsequent commit
-	public func save(_ batch: WriteBatch?, callback: ((Error?, T?) -> Void)?) {
+	open func save(_ batch: WriteBatch?, callback: ((Error?, T?) -> Void)?) {
 		let callbackWrapper: ((Error?, T?) -> Void) = {error, item in if let callback = callback { callback(error, item) } }
 
 		guard let selfProto = self as? T else {
@@ -222,14 +222,14 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Overload the method w/o batch and callback
-	public func delete() {
+	open func delete() {
 		self.delete(nil, callback: nil)
 	}
 	
 
 	/// Deletes the object, cleans it from the cache if necessary
 	/// - Parameter batch: If batch is passed, it only adds to the batch for subsequent commit
-	public func delete(_ batch: WriteBatch?, callback: ((Error?) -> Void)?) {
+	open func delete(_ batch: WriteBatch?, callback: ((Error?) -> Void)?) {
 		let callbackWrapper: ((Error?) -> Void) = {error in if let callback = callback { callback(error) } }
 
 		guard let selfProto = self as? T else {
@@ -304,4 +304,10 @@ public struct FBObjectNotifications {
 	public let Added: Notification.Name
 	public let Removed: Notification.Name
 	public let Edited: Notification.Name?
+	
+	public init(Added: Notification.Name, Removed: Notification.Name, Edited: Notification.Name?) {
+		self.Added = Added
+		self.Removed = Removed
+		self.Edited = Edited
+	}
 }
