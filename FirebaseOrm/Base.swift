@@ -301,7 +301,7 @@ public protocol FBObjectProto {
 
 
 public struct FBObjectNotifications {
-	let Added: Notification.Name
-	let Removed: Notification.Name
-	let Edited: Notification.Name?
+	public let Added: Notification.Name
+	public let Removed: Notification.Name
+	public let Edited: Notification.Name?
 }
