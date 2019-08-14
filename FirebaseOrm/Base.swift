@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 
 /// Every object working with Firebase needs to inherit the base class FBObject and support protocol FBObjectProto
-class FBObject<T>: Hashable where T: FBObjectProto   {
+public class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Return the protocol type - it is necessary to call static methods of the protocol
@@ -270,18 +270,18 @@ class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	// MARK: Hashable
-	static func == (lhs: FBObject, rhs: FBObject) -> Bool {
+	public static func == (lhs: FBObject, rhs: FBObject) -> Bool {
 		return lhs.documentID == rhs.documentID
 	}
 	
-	func hash(into hasher: inout Hasher) {
+	public func hash(into hasher: inout Hasher) {
 		hasher.combine(documentID.hashValue)
 	}
 
 }
 
 
-protocol FBObjectProto {
+public protocol FBObjectProto {
 	static var cacheNonTyped: [FBObjectProto] { get set }
 
 	init(_ doc: DocumentSnapshot)
@@ -300,7 +300,7 @@ protocol FBObjectProto {
 }
 
 
-struct FBObjectNotifications {
+public struct FBObjectNotifications {
 	let Added: Notification.Name
 	let Removed: Notification.Name
 	let Edited: Notification.Name?

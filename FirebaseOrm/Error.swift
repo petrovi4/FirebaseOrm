@@ -8,6 +8,6 @@
 
 import UIKit
 
-enum FirebaseOrmError: Error {
+public enum FirebaseOrmError: Error {
 	case notImplementFBObjectProto
 }
