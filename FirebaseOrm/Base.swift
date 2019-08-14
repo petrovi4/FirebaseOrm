@@ -18,7 +18,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	/// Return the protocol type - it is necessary to call static methods of the protocol
 	/// - Returns: Protocol type
-	static func getProtoType() throws -> FBObjectProto.Type {
+	static public func getProtoType() throws -> FBObjectProto.Type {
 		guard let selfProtoType = self as? T.Type else {
 			throw FirebaseOrmError.notImplementFBObjectProto
 		}
@@ -28,14 +28,14 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	/// Returns the type that you want to initialize the current QueryDocumentSnapshot
 	/// - Returns: Specific type with object constructor
-	class func getType(forSnap: QueryDocumentSnapshot) -> FBObjectProto.Type {
+	class public func getType(forSnap: QueryDocumentSnapshot) -> FBObjectProto.Type {
 		return T.self
 	}
 
 
 	
 	/// Typed collection of previously cached objects
-	static var cache: [T] {
+	static public var cache: [T] {
 		get {
 			let selfProtoType = self as! FBObjectProto.Type
 			return selfProtoType.cacheNonTyped as! [T]
@@ -44,7 +44,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 
 	
 	/// Request objects from Firebase
-	static func fetch(predicate: NSPredicate? = nil , callback: ((Error?, [T]) -> Void)?)  {
+	static public func fetch(predicate: NSPredicate? = nil , callback: ((Error?, [T]) -> Void)?)  {
 		let callbackWrapper: ((Error?, [T]) -> Void) = {error, items in if let callback = callback { callback(error, items) } }
 
 		guard let protoType = try? self.getProtoType() else {
@@ -97,7 +97,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 
 
 	/// Save objects from a collection with a single batch query
-	static func saveBatch(docs: [FBObject], callback: ((Error?) -> Void)?) {
+	static public func saveBatch(docs: [FBObject], callback: ((Error?) -> Void)?) {
 		let callbackWrapper: ((Error?) -> Void) = {error in if let callback = callback { callback(error) } }
 
 		guard let protoType = try? self.getProtoType() else {
@@ -120,7 +120,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	/// Remove objects from a collection with a single batch request
-	static func deleteBatch(docs: [FBObject], callback: ((Error?) -> Void)?) {
+	static public func deleteBatch(docs: [FBObject], callback: ((Error?) -> Void)?) {
 		let callbackWrapper: ((Error?) -> Void) = {error in if let callback = callback { callback(error) } }
 
 		guard let protoType = try? self.getProtoType() else {
@@ -270,7 +270,7 @@ open class FBObject<T>: Hashable where T: FBObjectProto   {
 	
 	
 	// MARK: Hashable
-	public static func == (lhs: FBObject, rhs: FBObject) -> Bool {
+	static public func == (lhs: FBObject, rhs: FBObject) -> Bool {
 		return lhs.documentID == rhs.documentID
 	}
 	
