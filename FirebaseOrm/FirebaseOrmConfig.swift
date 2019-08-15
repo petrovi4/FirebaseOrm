@@ -15,15 +15,16 @@ open class FirebaseOrmConfig: NSObject {
 
 	public static let shared = FirebaseOrmConfig()
 
-	public var db: Firestore
+	public lazy var db: Firestore = Firestore.firestore()
 
 
 	override init() {
+		super.init()
+		
 		FirebaseApp.configure()
 
 		let settings = FirestoreSettings()
 		settings.isPersistenceEnabled = true
-		db = Firestore.firestore()
 		db.settings = settings
 	}
 }
