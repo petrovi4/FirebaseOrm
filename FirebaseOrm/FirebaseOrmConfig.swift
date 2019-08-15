@@ -16,10 +16,6 @@ open class FirebaseOrmConfig: NSObject {
 	public static let shared = FirebaseOrmConfig()
 
 	public var db: Firestore
-	
-	public func configure() {
-		FirebaseApp.configure()
-	}
 
 
 	override init() {
